@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -29,6 +30,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Praise Ibe",
     description: "Technology and Data professional exploring AI, Data Analytics, and Civic Tech.",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
