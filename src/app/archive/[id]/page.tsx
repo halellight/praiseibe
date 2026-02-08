@@ -96,23 +96,33 @@ export default function ArticlePage() {
                             <div className="space-y-10 text-xl md:text-2xl leading-[1.7] font-medium tracking-tight text-foreground/90">
                                 {article.fullBody ? (
                                     article.fullBody.split('\n\n').map((paragraph, i) => {
-                                        if (paragraph.startsWith('###')) {
+                                        // Handle Main Headers (##)
+                                        if (paragraph.startsWith('## ')) {
                                             return (
                                                 <h2 key={i} className="text-3xl md:text-5xl font-heading font-black uppercase tracking-tight text-foreground pt-16 pb-4 border-b border-border/30">
-                                                    {paragraph.replace('### ', '')}
+                                                    {paragraph.replace('## ', '')}
                                                 </h2>
                                             );
                                         }
 
-                                        // Handle numbered lists or bullet points (basic)
+                                        // Handle Sub-Headers (###)
+                                        if (paragraph.startsWith('### ')) {
+                                            return (
+                                                <h3 key={i} className="text-xl md:text-2xl font-bold uppercase tracking-widest text-foreground pt-12 pb-2">
+                                                    {paragraph.replace('### ', '')}
+                                                </h3>
+                                            );
+                                        }
+
+                                        // Handle Numbered lists
                                         if (paragraph.match(/^\d\./m)) {
                                             return (
                                                 <div key={i} className="space-y-6 pt-4">
-                                                    {paragraph.split('\n').map((line, j) => (
+                                                    {paragraph.split('\n').filter(line => line.trim()).map((line, j) => (
                                                         <p key={j} className="pl-8 relative border-l border-border/50">
-                                                            <span className="absolute -left-4 top-0 font-black text-xs opacity-20">0{j + 1}</span>
+                                                            <span className="absolute -left-4 top-0 font-black text-xs opacity-20">{j < 9 ? `0${j + 1}` : j + 1}</span>
                                                             <span dangerouslySetInnerHTML={{
-                                                                __html: line.replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>').replace(/^\d\.\s/, '')
+                                                                __html: line.replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>').replace(/^\d\.\s?/, '')
                                                             }} />
                                                         </p>
                                                     ))}
@@ -120,9 +130,30 @@ export default function ArticlePage() {
                                             );
                                         }
 
+                                        // Handle Bullet points
+                                        if (paragraph.startsWith('- ')) {
+                                            return (
+                                                <ul key={i} className="space-y-4 pt-4 ml-2">
+                                                    {paragraph.split('\n').filter(line => line.trim()).map((line, j) => (
+                                                        <li key={j} className="flex gap-4">
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-3 flex-shrink-0" />
+                                                            <span dangerouslySetInnerHTML={{
+                                                                __html: line.replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>').replace(/^- \s?/, '')
+                                                            }} />
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            );
+                                        }
+
+                                        // Regular paragraphs with selective drop-cap
+                                        // Only drop-cap the very first paragraph
+                                        const isFirstPara = i === 0;
                                         return (
-                                            <p key={i} className="first-letter:text-5xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:leading-none">
-                                                {paragraph}
+                                            <p key={i} className={isFirstPara ? "first-letter:text-5xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:leading-none" : ""}>
+                                                <span dangerouslySetInnerHTML={{
+                                                    __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>')
+                                                }} />
                                             </p>
                                         );
                                     })

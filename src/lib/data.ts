@@ -128,27 +128,26 @@ export const COMPENDIUM_DATA: CompendiumItem[] = [
         title: "Corruption and Accountability in Governance",
         subtitle: "A Reflection on Nigerian Democracy Day",
         description: "An archival reflection on the systemic challenges of corruption and the critical necessity of accountability in the Nigerian democratic project.",
-        fullBody: `### Introduction: The Shadow of June 12th
-Democracy Day in Nigeria is more than a public holiday; it is a profound marker of our transition to civilian rule in 1999 and a necessary moment of introspective pause. However, as we commemorate this milestone, we must confront the twin shadows that consistently threaten our progress: systemic corruption and the persistent erosion of public accountability.
+        fullBody: `Democracy Day in Nigeria is more than a public holiday; it is a profound marker of our transition to civilian rule in 1999 and a necessary moment of introspective pause. However, as we commemorate this milestone, we must confront the twin shadows that consistently threaten our progress: systemic corruption and the persistent erosion of public accountability.
 
-Ranked 148th out of 180 on Transparency International’s Corruption Perception Index, Nigeria faces an existential challenge that undermines every pillar of its development.
+Ranked **148th out of 180** on Transparency International’s Corruption Perception Index, Nigeria faces an existential challenge that undermines every pillar of its development.
 
-### The Anatomy of Systemic Corruption
+## The Anatomy of Systemic Corruption
 Corruption in the Nigerian context is not merely a series of isolated incidents; it is a pervasive architecture that permeates both the halls of governance and the corridors of commerce. From electoral fraud and nepotism to the high-level embezzlement of public funds, its impact is devastatingly tangible. 
 
 The redirection of vital resources away from healthcare, education, and infrastructure into private pockets creates a vicious cycle of poverty and inequality. Perhaps most damaging is the psychological toll: the erosion of public trust in democratic institutions and the rule of law.
 
-### Accountability: The Essential Safeguard
+## Accountability: The Essential Safeguard
 If democracy is the engine of a nation, accountability is its essential governing mechanism. Yet, in Nigeria, this link remains chronically weak. A pervasive culture of impunity—often driven by a lack of political will—allows high-profile corruption cases to stall or vanish entirely.
 
 Furthermore, the very institutions designed to protect the integrity of the state—the judiciary and anti-corruption agencies—are frequently hamstrung by underfunding and political interference, leaving them incapable of acting as the robust checks they were meant to be.
 
-### Watchdogs and Catalysts
-Amidst these challenges, Civil Society Organizations (CSOs) and an independent media remain the most critical champions of transparency. Organizations like SERAP and NEITI have been instrumental in surfacing deep-seated malpractice and advocating for legislative reform.
+## Watchdogs and Catalysts
+Amidst these challenges, **Civil Society Organizations (CSOs)** and an independent media remain the most critical champions of transparency. Organizations like SERAP and NEITI have been instrumental in surfacing deep-seated malpractice and advocating for legislative reform.
 
 Through investigative journalism, the media has the power to mobilize public opinion and demand justice. However, this role comes at a steep price, as journalists frequently face harassment and violence in their pursuit of the truth.
 
-### A Roadmap for Renewal
+## A Roadmap for Renewal
 Reversing this tide requires more than rhetoric; it demands comprehensive structural reform:
 - **Institutional Independence**: Empowering anti-corruption agencies and the judiciary with genuine autonomy and adequate resources.
 - **Legislative Enforcement**: Moving beyond the existence of laws to their actual enforcement, including the robust implementation of the Whistleblower Protection Act.
@@ -156,7 +155,7 @@ Reversing this tide requires more than rhetoric; it demands comprehensive struct
 - **Citizen Engagement**: Fostering a culture of integrity through education and active public participation in governance.
 - **Technological Innovation**: Utilizing e-governance and digital platforms to reduce human interface, automate public expenditure tracking, and increase transparency.
 
-### Conclusion: Beyond the Ballot
+## Conclusion: Beyond the Ballot
 True democracy extends far beyond the mere conduct of elections; it is defined by the resilience of its transparency and the strength of its accountability. While the journey toward a corruption-free Nigeria is steep, it remains attainable. Through collective commitment and the uncompromising pursuit of the rule of law, we can build a nation that reflects the true potential and well-being of all its citizens.`,
         meta: ["8 min read", "June 12th Archive"],
     },
@@ -264,7 +263,7 @@ export const COMPANIES = [
 ];
 
 export const SOCIALS = {
-    linkedin: "https://linkedin.com/in/praiseibe",
+    linkedin: "https://www.linkedin.com/in/praise-ibe-3556a625b/",
     twitter: "https://x.com/_halel",
     email: "praiseibec@gmail.com",
     resume: "https://drive.google.com/file/d/1kJrLn1_aw1UqzWwf_g94rVMCXBteAtQW/view?usp=sharing",
