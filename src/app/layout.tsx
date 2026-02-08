@@ -25,11 +25,20 @@ export const metadata: Metadata = {
     title: "Praise Ibe | Technology & Data Professional",
     description: "Building digital systems that strengthen civic participation.",
     siteName: "Praise Ibe Portfolio",
+    images: [
+      {
+        url: "/favicon.svg",
+        width: 512,
+        height: 512,
+        alt: "P. Logo",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Praise Ibe",
     description: "Technology and Data professional exploring AI, Data Analytics, and Civic Tech.",
+    images: ["/favicon.svg"],
   },
   icons: {
     icon: "/favicon.svg",
