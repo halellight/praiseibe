@@ -19,7 +19,7 @@ const CATEGORIES = [
 ];
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("work");
 
   const filteredData = useMemo(() => {
     if (activeCategory === "all") return COMPENDIUM_DATA;
@@ -50,7 +50,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-12 items-end">
               <div className="md:col-span-12 lg:col-span-6 space-y-8">
                 <p className="text-xl md:text-3xl font-medium tracking-tight leading-tight">
-                  Designing data-driven systems that power participation and decision-making.
+                  I build digital systems at the intersection of data, and design — improving access, participation, and decision-making.
                   <br />
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default function Home() {
                   href={`/building/${venture.id}`}
                   className="bg-background p-12 space-y-4 group hover:bg-muted/50 transition-colors"
                 >
-                  <p className="text-[9px] font-black uppercase tracking-widest opacity-30">{venture.id.toUpperCase()}</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-30">Building_{venture.id.toUpperCase()}</p>
                   <h3 className="text-4xl font-heading font-black tracking-tighter uppercase leading-none group-hover:italic transition-all">
                     {venture.name}
                   </h3>
