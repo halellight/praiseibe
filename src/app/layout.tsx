@@ -16,7 +16,7 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   title: "Praise Ibe | Technology & Data Professional",
-  description: "Personal archive of Praise Ibe, focusing on AI, data, and civic participation.",
+  description: "Personal archive of Praise Ibe, focusing on design, data, and civic participation.",
   authors: [{ name: "Praise Ibe" }],
   openGraph: {
     type: "website",
@@ -27,23 +27,23 @@ export const metadata: Metadata = {
     siteName: "Praise Ibe Portfolio",
     images: [
       {
-        url: "/favicon.svg",
-        width: 512,
-        height: 512,
-        alt: "P. Logo",
+        url: "/praise.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Praise Ibe",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Praise Ibe",
-    description: "Technology and Data professional exploring AI, Data Analytics, and Civic Tech.",
-    images: ["/favicon.svg"],
+    description: "Technology and Data professional exploring Design, Analytics, and Civic Tech.",
+    images: ["/praise.jpg"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/praise.jpg",
+    shortcut: "/praise.jpg",
+    apple: "/praise.jpg",
   },
 };
 

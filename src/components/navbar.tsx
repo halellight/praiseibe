@@ -72,7 +72,7 @@ function DigitalClock() {
 
     return (
         <div className="flex flex-col items-end gap-1">
-            <div className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/30">
+            <div className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground">
                 Abuja / {time || "00:00:00"}
             </div>
         </div>

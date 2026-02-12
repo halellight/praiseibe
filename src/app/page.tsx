@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const CATEGORIES = [
-  { id: "all", label: "All Records", icon: LayoutGrid },
+  // { id: "all", label: "All Records", icon: LayoutGrid },
   { id: "work", label: "Work", icon: Briefcase },
   { id: "project", label: "Projects", icon: LayoutGrid },
   { id: "education", label: "Education", icon: GraduationCap },
@@ -50,8 +50,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-12 items-end">
               <div className="md:col-span-12 lg:col-span-6 space-y-8">
                 <p className="text-xl md:text-3xl font-medium tracking-tight leading-tight">
-                  I am a technology and data professional redefining digital participation
-                  through <span className="underline underline-offset-8 decoration-border">AI</span> and civic transparency.
+                  Designing data-driven systems that power participation and decision-making.
+                  <br />
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Home() {
                   href={`/building/${venture.id}`}
                   className="bg-background p-12 space-y-4 group hover:bg-muted/50 transition-colors"
                 >
-                  <p className="text-[9px] font-black uppercase tracking-widest opacity-30">Venture_{venture.id.toUpperCase()}</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-30">{venture.id.toUpperCase()}</p>
                   <h3 className="text-4xl font-heading font-black tracking-tighter uppercase leading-none group-hover:italic transition-all">
                     {venture.name}
                   </h3>
@@ -116,7 +116,7 @@ export default function Home() {
         <div className="max-w-[1800px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
             <div className="space-y-6">
-              <h2 className="text-[11px] font-black uppercase tracking-[0.4em] text-muted-foreground">The Timeline / Selected Milestones</h2>
+              <h2 className="text-[11px] font-black uppercase tracking-[0.4em] text-muted-foreground">The Timeline</h2>
               <div className="flex flex-wrap gap-2">
                 {CATEGORIES.map((cat) => (
                   <button
@@ -148,7 +148,7 @@ export default function Home() {
       <footer className="px-6 md:px-12 py-48 bg-muted/30">
         <div className="max-w-[1800px] mx-auto text-center space-y-24">
           <div className="space-y-4">
-            <h3 className="text-[10vw] font-heading font-black tracking-tighter uppercase leading-none opacity-5">
+            <h3 className="text-[10vw] font-heading font-black tracking-tighter uppercase leading-none opacity-8">
               Contact me.
             </h3>
             <a
@@ -161,7 +161,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 pt-24 border-t border-border/50">
             <div className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground">
-              Built by Praise Ibe / 2026
+              PRAISEIBE © {new Date().getFullYear()}
             </div>
             <div className="flex gap-12">
               <a href={SOCIALS.github} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">GitHub</a>
@@ -282,17 +282,29 @@ function ArchiveRow({ item }: { item: CompendiumItem }) {
                     </div>
                   )}
 
-                  <div className="mt-16 flex justify-between items-end">
-                    {item.link && (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-3 px-8 py-4 bg-foreground text-background font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-transform"
-                      >
-                        Visit Project <ArrowUpRight size={16} />
-                      </a>
-                    )}
+                  <div className="mt-16 flex flex-wrap gap-4 justify-between items-end">
+                    <div className="flex flex-wrap gap-4">
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-3 px-8 py-4 bg-foreground text-background font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-transform"
+                        >
+                          Visit Project <ArrowUpRight size={16} />
+                        </a>
+                      )}
+                      {item.secondaryLink && (
+                        <a
+                          href={item.secondaryLink}
+                          target="_blank"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-3 px-8 py-4 border border-foreground text-foreground font-black uppercase text-[10px] tracking-widest hover:bg-foreground hover:text-background transition-all"
+                        >
+                          {item.secondaryLinkLabel || "External Link"} <ArrowUpRight size={16} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

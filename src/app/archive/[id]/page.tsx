@@ -98,19 +98,39 @@ export default function ArticlePage() {
                                     article.fullBody.split('\n\n').map((paragraph, i) => {
                                         // Handle Main Headers (##)
                                         if (paragraph.startsWith('## ')) {
+                                            const [header, ...rest] = paragraph.split('\n');
                                             return (
-                                                <h2 key={i} className="text-3xl md:text-5xl font-heading font-black uppercase tracking-tight text-foreground pt-16 pb-4 border-b border-border/30">
-                                                    {paragraph.replace('## ', '')}
-                                                </h2>
+                                                <div key={i} className="space-y-6">
+                                                    <h2 className="text-3xl md:text-5xl font-heading font-black uppercase tracking-tight text-foreground pt-16 pb-4 border-b border-border/30">
+                                                        {header.replace('## ', '')}
+                                                    </h2>
+                                                    {rest.length > 0 && (
+                                                        <p className="text-xl md:text-2xl leading-[1.7] font-medium tracking-tight text-foreground/90">
+                                                            <span dangerouslySetInnerHTML={{
+                                                                __html: rest.join(' ').replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>')
+                                                            }} />
+                                                        </p>
+                                                    )}
+                                                </div>
                                             );
                                         }
 
                                         // Handle Sub-Headers (###)
                                         if (paragraph.startsWith('### ')) {
+                                            const [header, ...rest] = paragraph.split('\n');
                                             return (
-                                                <h3 key={i} className="text-xl md:text-2xl font-bold uppercase tracking-widest text-foreground pt-12 pb-2">
-                                                    {paragraph.replace('### ', '')}
-                                                </h3>
+                                                <div key={i} className="space-y-6">
+                                                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-widest text-foreground pt-12 pb-2">
+                                                        {header.replace('### ', '')}
+                                                    </h3>
+                                                    {rest.length > 0 && (
+                                                        <p className="text-xl md:text-2xl leading-[1.7] font-medium tracking-tight text-foreground/90">
+                                                            <span dangerouslySetInnerHTML={{
+                                                                __html: rest.join(' ').replace(/\*\*(.*?)\*\*/g, '<b class="text-foreground">$1</b>')
+                                                            }} />
+                                                        </p>
+                                                    )}
+                                                </div>
                                             );
                                         }
 
