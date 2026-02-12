@@ -144,6 +144,17 @@ export const COMPENDIUM_DATA: CompendiumItem[] = [
         tags: ["Blockchain", "Security", "Web3"],
     },
     {
+        id: "stephen-dada",
+        type: "project",
+        year: "2024",
+        category: "Personal Website",
+        title: "Stephen Dada",
+        subtitle: "Personal Portfolio",
+        description: "A high-end personal website built for Stephen Dada, featuring a minimalist aesthetic and smooth transitions to showcase his professional journey.",
+        link: "https://stephen-dada.vercel.app/",
+        tags: ["Next.js", "Design", "Portfolio"],
+    },
+    {
         id: "busa-app",
         type: "project",
         year: "2024",
@@ -259,18 +270,24 @@ True democracy extends far beyond the mere conduct of elections; it is defined b
         type: "volunteer",
         year: "2024",
         category: "Creative",
-        title: "Campus Photographer",
+        title: "Photographer",
         subtitle: "Campus Lifestyle | Babcock University",
-        description: "Capturing the essence of campus culture and documenting lifestyle moments through high-end photography. Contributing to the visual narrative of the institutional legacy.",
+        description: "Capturing the essence of campus culture and documenting lifestyle moments through high-end photography. Contributing to the visual narrative of the school.",
         meta: ["Babcock University", "Visual Arts"],
-        tags: ["Photography", "Creative Direction"]
+        tags: ["Photography", "Creative Direction"],
+        images: [
+            "/artifacts/campus_1.png",
+            "/artifacts/campus_2.jpeg",
+            "/artifacts/campus_3.jpeg",
+            "/artifacts/campus_4.JPG"
+        ]
     },
     {
         id: "huawei-2023",
         type: "work",
         year: "2023",
         category: "Telecommunications",
-        title: "Network Engineer Intern",
+        title: "Network Engineering Intern",
         subtitle: "Huawei Technologies",
         description: "Managed data communication operations and 5G topology configuration for enterprise clients.",
     },
@@ -323,6 +340,7 @@ export const COMPANIES = [
 export const SOCIALS = {
     linkedin: "https://www.linkedin.com/in/praise-ibe-3556a625b/",
     twitter: "https://x.com/_halel",
+    github: "https://github.com/halellight",
     email: "praiseibec@gmail.com",
     resume: "https://drive.google.com/file/d/1kJrLn1_aw1UqzWwf_g94rVMCXBteAtQW/view?usp=sharing",
 };

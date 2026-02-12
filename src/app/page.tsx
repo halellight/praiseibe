@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { ArrowUpRight, Plus, Minus, LayoutGrid, FileText, Briefcase, GraduationCap, Heart, Calendar, ShieldCheck, Zap } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const CATEGORIES = [
@@ -260,14 +261,12 @@ function ArchiveRow({ item }: { item: CompendiumItem }) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
                       {item.images.map((img, idx) => (
                         <div key={idx} className="aspect-[4/3] relative overflow-hidden bg-muted group/img">
-                          <img
+                          <Image
                             src={img}
                             alt={`Gallery image ${idx + 1}`}
-                            className="object-cover w-full h-full transition-transform duration-700 group-hover/img:scale-110"
-                            onError={(e) => {
-                              // Fallback for missing images
-                              (e.target as HTMLImageElement).style.display = 'none';
-                            }}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 group-hover/img:scale-110"
                           />
                         </div>
                       ))}

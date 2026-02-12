@@ -72,8 +72,20 @@ function DigitalClock() {
 
     return (
         <div className="flex flex-col items-end gap-1">
-            <div className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/30">
-                Abuja / {time || "00:00:00"}
+            <div className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/30 flex items-center gap-2">
+                Abuja /
+                <motion.span
+                    animate={{
+                        opacity: [0.3, 1, 0.3],
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                >
+                    {time || "00:00:00"}
+                </motion.span>
             </div>
         </div>
     );

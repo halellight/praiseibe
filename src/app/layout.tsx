@@ -41,10 +41,9 @@ export const metadata: Metadata = {
     images: ["/praise.jpg"],
   },
   icons: {
-    icon: "/praise.jpg",
-    shortcut: "/praise.jpg",
-    apple: "/praise.jpg",
+    icon: "/favicon.ico",
   },
+
 };
 
 export default function RootLayout({
