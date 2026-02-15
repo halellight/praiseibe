@@ -1,0 +1,57 @@
+﻿
+> portfolio-v2@0.1.0 build
+> next build
+
+   Ôû▓ Next.js 15.1.6
+
+   Creating an optimized production build ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\U
+sers\danie\AppData\Roa
+ming\ ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Failed to    
+ compile.:String)     
+[], RemoteExcepti    
+on
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+
+./node_modules\next\di
+st\compiled\client-onl
+y\error.js
+'client-only' cannot 
+be imported from a 
+Server Component 
+module. It should 
+only be used from a 
+Client Component.
+
+Import trace for 
+requested module:
+  ./node_modules\next\
+dist\compiled\client-o
+nly\error.js
+  ./node_modules\style
+d-jsx\dist\index\index
+.js
+  ./node_modules\style
+d-jsx\style.js
+  ./src\app\wiki\page.
+tsx
+
+
+> Build failed 
+because of webpack 
+errors
+

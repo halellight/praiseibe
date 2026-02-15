@@ -165,6 +165,7 @@ export default function Home() {
               PRAISEIBE © {new Date().getFullYear()}
             </div>
             <div className="flex gap-12">
+              <Link href="/wiki" className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity flex items-center gap-1 italic underline decoration-dotted">Wiki Profile</Link>
               <a href={SOCIALS.github} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">GitHub</a>
               <a href={SOCIALS.twitter} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">Twitter</a>
               <a href={SOCIALS.linkedin} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">LinkedIn</a>
