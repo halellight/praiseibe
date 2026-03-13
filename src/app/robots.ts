@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://praiseibe.me/sitemap.xml',
+        sitemap: 'https://praiseibe.com/sitemap.xml',
     };
 }

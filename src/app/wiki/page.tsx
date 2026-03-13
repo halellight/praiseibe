@@ -141,7 +141,7 @@ export default function WikiPage() {
                                     <InfoboxRow label="Occupation" value="Business Analyst, Tech Consultant" />
                                     <InfoboxRow label="Known for" value="Àwùjọ, Civic Tech initiatives" />
                                     <InfoboxRow label="Ventures" value="Monisight, Consilo, Zowa Advisory" />
-                                    <InfoboxRow label="Website" value={<a href="https://praiseibe.com" className="text-blue-700 hover:underline">praiseibe.me</a>} />
+                                    <InfoboxRow label="Website" value={<a href="https://praiseibe.com" className="text-blue-700 hover:underline">praiseibe.com</a>} />
                                 </tbody>
                             </table>
                         </div>
