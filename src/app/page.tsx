@@ -22,6 +22,7 @@ const CATEGORIES = [
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("work");
   const [activeGallery, setActiveGallery] = useState<{ images: string[], index: number } | null>(null);
+  const [openRecordId, setOpenRecordId] = useState<string | null>(null);
 
   const filteredData = useMemo(() => {
     if (activeCategory === "all") return COMPENDIUM_DATA;
@@ -142,6 +143,8 @@ export default function Home() {
                 <ArchiveRow 
                   key={record.id} 
                   item={record} 
+                  isOpen={openRecordId === record.id}
+                  onToggle={() => setOpenRecordId(openRecordId === record.id ? null : record.id)}
                   onImageClick={(images, idx) => setActiveGallery({ images, index: idx })}
                 />
               ))}
@@ -239,16 +242,14 @@ export default function Home() {
   );
 }
 
-function ArchiveRow({ item, onImageClick }: { item: CompendiumItem, onImageClick: (images: string[], index: number) => void }) {
-  const [isOpen, setIsOpen] = useState(false);
+function ArchiveRow({ item, isOpen, onToggle, onImageClick }: { item: CompendiumItem, isOpen: boolean, onToggle: () => void, onImageClick: (images: string[], index: number) => void }) {
   const router = useRouter();
-
 
   const handleInteraction = () => {
     if (item.type === "article") {
       router.push(`/archive/${item.id}`);
     } else {
-      setIsOpen(!isOpen);
+      onToggle();
     }
   };
 
