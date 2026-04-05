@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPENDIUM_DATA, SOCIALS, COMPANIES, VENTURES, CompendiumItem } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
-import { ArrowUpRight, Plus, Minus, LayoutGrid, FileText, Briefcase, GraduationCap, Heart, Calendar, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, Plus, Minus, LayoutGrid, FileText, Briefcase, GraduationCap, Heart, Calendar, ShieldCheck, Zap, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +21,7 @@ const CATEGORIES = [
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("work");
+  const [activeGallery, setActiveGallery] = useState<{ images: string[], index: number } | null>(null);
 
   const filteredData = useMemo(() => {
     if (activeCategory === "all") return COMPENDIUM_DATA;
@@ -138,7 +139,11 @@ export default function Home() {
           <div className="divide-y divide-border border-t border-border">
             <AnimatePresence mode="popLayout" initial={false}>
               {filteredData.map((record) => (
-                <ArchiveRow key={record.id} item={record} />
+                <ArchiveRow 
+                  key={record.id} 
+                  item={record} 
+                  onImageClick={(images, idx) => setActiveGallery({ images, index: idx })}
+                />
               ))}
             </AnimatePresence>
           </div>
@@ -173,11 +178,68 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activeGallery !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-sm p-4 md:p-12"
+            onClick={() => setActiveGallery(null)}
+          >
+            <button 
+              className="absolute top-6 right-6 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
+              onClick={(e) => { e.stopPropagation(); setActiveGallery(null); }}
+            >
+              <X size={24} />
+            </button>
+
+            {activeGallery.images.length > 1 && (
+              <button 
+                className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
+                onClick={(e) => { 
+                  e.stopPropagation();
+                  setActiveGallery((prev) => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null);
+                }}
+              >
+                <ChevronLeft size={32} />
+              </button>
+            )}
+
+            {activeGallery.images.length > 1 && (
+              <button 
+                className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
+                onClick={(e) => { 
+                  e.stopPropagation();
+                  setActiveGallery((prev) => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null);
+                }}
+              >
+                <ChevronRight size={32} />
+              </button>
+            )}
+
+            <div className="relative w-full h-[80vh] max-w-6xl" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={activeGallery.images[activeGallery.index]}
+                alt={`Gallery expanded image ${activeGallery.index + 1}`}
+                fill
+                className="object-contain"
+              />
+            </div>
+            
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-bold tracking-widest uppercase">
+              {activeGallery.index + 1} / {activeGallery.images.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
 
-function ArchiveRow({ item }: { item: CompendiumItem }) {
+function ArchiveRow({ item, onImageClick }: { item: CompendiumItem, onImageClick: (images: string[], index: number) => void }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
@@ -261,7 +323,14 @@ function ArchiveRow({ item }: { item: CompendiumItem }) {
                   {item.images && item.images.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
                       {item.images.map((img, idx) => (
-                        <div key={idx} className="aspect-[4/3] relative overflow-hidden bg-muted group/img">
+                        <div 
+                          key={idx} 
+                          className="aspect-[4/3] relative overflow-hidden bg-muted group/img cursor-pointer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onImageClick(item.images!, idx);
+                          }}
+                        >
                           <Image
                             src={img}
                             alt={`Gallery image ${idx + 1}`}

@@ -38,6 +38,22 @@ export const COMPENDIUM_DATA: CompendiumItem[] = [
         description: "Gained hands-on experience in engineering operations and project support during a one-month internship (January 2025).",
     },
     {
+        id: "epsg-training-camp",
+        type: "event",
+        year: "2026",
+        category: "Civic Engagement",
+        title: "EPSG Social Media Influencer Training Camp",
+        subtitle: "EU Support to ECOWAS | FIAP",
+        description: "Participated in a 3-day cohort focused on the effects of disinformation, misinformation, and malinformation on electoral integrity. Co-led 'FactForce'—a team that provided a social media campaign and website to curb these vices. The event also birthed the 'CheckBeforeYouPost' campaign by FIAP and the 'Peace is Steeze' collaborative song addressing electoral violence.",
+        meta: ["FIAP", "Electoral Integrity"],
+        tags: ["Media Literacy", "Civic Education", "Campaign Strategy"],
+        images: [
+            "/artifacts/Epsg-1.jpeg",
+            "/artifacts/Epsg-2.jpeg",
+            "/artifacts/Epsg-3.jpeg"
+        ]
+    },
+    {
         id: "ivote-fct",
         type: "volunteer",
         year: "2025",
