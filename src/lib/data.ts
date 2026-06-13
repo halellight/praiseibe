@@ -38,6 +38,23 @@ export const COMPENDIUM_DATA: CompendiumItem[] = [
         description: "Gained hands-on experience in engineering operations and project support during a one-month internship (January 2025).",
     },
     {
+        id: "caustival-2026",
+        type: "event",
+        year: "2026",
+        category: "Civic Engagement",
+        title: "Caustival 26",
+        subtitle: "Civic Art & Activism Forum",
+        description: "Participated in Caustival 26, a civic engagement forum for young Nigerians centered around art, documentaries, and community conversations. The event showcased powerful expressions of activism, highlighting the shared struggles and youth-led fights against corruption and political repression.",
+        meta: ["Abuja, Nigeria", "Youth Engagement"],
+        tags: ["Civic Engagement", "Artivism", "Anti-Corruption"],
+        images: [
+            "/artifacts/caustival_1.jpg",
+            "/artifacts/caustival_2.jpg",
+            "/artifacts/caustival_3.jpg",
+            "/artifacts/caustival_4.jpg"
+        ]
+    },
+    {
         id: "epsg-training-camp",
         type: "event",
         year: "2026",
