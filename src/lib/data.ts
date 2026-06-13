@@ -255,6 +255,45 @@ export const COMPENDIUM_DATA: CompendiumItem[] = [
         description: "Provided technical support and maintained IT infrastructure during a two-month internship (January - February 2024).",
     },
     {
+        id: "article-democracy-day-2026",
+        type: "article",
+        year: "2026",
+        category: "Thought Leadership",
+        title: "This Is Not the Time to Celebrate",
+        subtitle: "A Reflection on Democracy Day 2026",
+        description: "A solemn reflection on Nigerian Democracy Day 2026, confronting the harsh realities of insecurity, economic hardship, and the memory of those who sacrificed for a nation that has yet to fulfill its promise.",
+        fullBody: `Democracy Day should be a moment of solemn reflection, a day when we measure ourselves against the ideals of freedom, justice, and dignity. Like July 4th in the United States, it should stir both pride and conscience. But here in Nigeria, as children remain kidnapped from their schools in Oyo State, and just two days ago, bandits attacked a school in Kogi State, killing the vice principal, and two others while students sat for their WAEC examinations, our leaders parade and campaign, turning this solemn day into a political showcase through the Renewed Hope Initiative.
+
+Our democracy was never meant to be a facade. It was built on the sacrifices of advocates who stood for justice and human dignity at enormous personal cost. **MKO Abiola**, whose presidential mandate the military stole. **Kudirat Abiola**, who carried on her husband's fight and was gunned down in traffic for it. **Chief Gani Fawehinmi**, the lawyer who stood unflinchingly for civil rights. **Dele Giwa**, the Newswatch editor-in-chief killed in his own home by a parcel bomb, handed to him by his son. And **Fela Kuti**, and his mother **Funmilayo**, who used music and activism as weapons against tyranny and paid dearly for it. They believed in a Nigeria where every citizen could thrive.
+
+That Nigeria has not yet arrived.
+
+While those heroes rest in their graves, bandits who abducted teachers and children from schools in Oyo State sent a video to the entire world showing the beheading of **Michael Oyedokun**, a mathematics teacher, a father, a brother, a guardian, taken from his own school. His family watched. Nigeria watched. The world watched. And our government celebrated.
+
+According to the World Bank, over **40% of Nigerians live in poverty**, with more than 80 million trapped in deprivation. Economic growth hovers just above 2%, while inflation and unemployment climb. Reports of a staggering **210 trillion naira discrepancy** linked to Mele Kyari, the ex NNPC GMD, circulate freely, and we are expected to move on. We were once told, with a straight face, that a snake had swallowed millions from a government vault. This is the democracy we are being asked to celebrate.
+
+At **Caustival 26**, a civic engagement forum for young Nigerians, I watched a documentary about **Boniface Mwangi**, the Kenyan photojournalist who risked everything to fight corruption and repression in his own country. He stood in the streets, threatened, and silenced repeatedly, and he kept going. His story just amplifies the fight he is waging in Nairobi is the same fight that is waiting for us here in Abuja, in Lagos, in Ogbomoso, in every corner of this nation.
+
+Later this evening, my Bolt driver turned out to be a soldier, a family man with children who has served this nation for 17 years. After nearly two decades protecting our country, he still earns under **120,000 naira a month**, barely enough to survive. He drives to make ends meet. While trillions vanish at the top, this man cannot protect his own family from poverty.
+
+How can we ask citizens to defend a nation that will not defend their dignity?
+
+This is not just a statistic. This is a life of sacrifice. This is the face of a nation waiting for justice.
+
+As early as 2011, a U.S. Air War College study warned that Nigeria could risk becoming a failed state by 2030 if corruption, insecurity, and economic decline remained unaddressed. Although it was a hypothetical scenario, it was taken seriously by many international observers.
+
+No Nigerian should be comfortable with this. No Nigerian should be comfortable with a generation growing up thinking emigration is their only hope. No Nigerian should accept a democracy that delivers so little.
+
+The future will not be shaped by politicians alone. It will be shaped by citizens. By young people who refuse to remain silent.
+
+For years, we have repeated the same phrase: *"I want a better Nigeria for my children."* For years, we have postponed responsibility to the next election, the next administration, the next generation.
+
+How much longer must we wait?
+
+The future is ours to shape, but only if we choose to shape it. **Get your PVC. Talk to your family and friends. Prepare for 2027.** Nigeria belongs to all of us, and the responsibility for its future belongs to all of us too.`,
+        meta: ["4 min read", "June 12th 2026"],
+    },
+    {
         id: "article-democracy-day",
         type: "article",
         year: "2024",

@@ -187,7 +187,7 @@ export default function ArticlePage() {
                     {/* Footer Metadata */}
                     <div className="pt-32 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-12 group/footer">
                         <div className="flex flex-col gap-2">
-                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/40 transition-colors group-hover/footer:text-muted-foreground">Original Published 2024</p>
+                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/40 transition-colors group-hover/footer:text-muted-foreground">Original Published {article.year}</p>
                             <p className="text-[9px] font-mono opacity-20 uppercase tracking-widest">ARCHIVE_ID: {article.id.toUpperCase()}</p>
                         </div>
 
