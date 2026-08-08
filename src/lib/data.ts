@@ -471,3 +471,128 @@ export const SOCIALS = {
     email: "praiseibec@gmail.com",
     resume: "https://drive.google.com/file/d/1kJrLn1_aw1UqzWwf_g94rVMCXBteAtQW/view?usp=sharing",
 };
+
+export type PhotoItem = {
+    id: string;
+    title: string;
+    caption: string;
+    rollId: string;
+    rollName: string;
+    date: string;
+    location: string;
+    src: string;
+    aspectRatio?: "square" | "portrait" | "landscape" | "wide";
+    exif?: {
+        camera?: string;
+        lens?: string;
+        focalLength?: string;
+        aperture?: string;
+        shutterSpeed?: string;
+        iso?: string;
+    };
+    story?: string;
+};
+
+export type PhotoRoll = {
+    id: string;
+    title: string;
+    subtitle: string;
+    year: string;
+    location: string;
+    description: string;
+};
+
+export const PHOTO_ROLLS: PhotoRoll[] = [
+    {
+        id: "all",
+        title: "All Photos",
+        subtitle: "iPhone 11 Log",
+        year: "2026",
+        location: "Abuja / Kaduna",
+        description: "Photos captured on iPhone 11 across Abuja and Kaduna.",
+    },
+];
+
+export const PHOTO_ITEMS: PhotoItem[] = [
+    {
+        id: "photo-01",
+        title: "NRS Building",
+        caption: "The new NRS building in Abuja captured against blue skies.",
+        rollId: "all",
+        rollName: "Architecture & Observations",
+        date: "2026",
+        location: "Abuja, Nigeria",
+        src: "/user-photos/photo_1.jpg",
+        aspectRatio: "portrait",
+        exif: {
+            camera: "iPhone 11",
+            lens: "26mm f/1.8 Main",
+            focalLength: "26mm",
+            aperture: "f/1.8",
+            shutterSpeed: "1/1200s",
+            iso: "32",
+        },
+        story: "The new NRS building standing tall in central Abuja, captured on iPhone 11.",
+    },
+    {
+        id: "photo-02",
+        title: "Kaduna NYSC Camp",
+        caption: "Quiet tree line across the field during NYSC orientation camp.",
+        rollId: "all",
+        rollName: "Observations",
+        date: "2026",
+        location: "Kaduna, Nigeria",
+        src: "/user-photos/photo_2.jpg",
+        aspectRatio: "landscape",
+        exif: {
+            camera: "iPhone 11",
+            lens: "26mm f/1.8 Main",
+            focalLength: "26mm",
+            aperture: "f/1.8",
+            shutterSpeed: "1/850s",
+            iso: "20",
+        },
+        story: "Wide sepia tone landscape captured across the parade ground at Kaduna NYSC camp.",
+    },
+    {
+        id: "photo-03",
+        title: "Bank of Industry Tower 2",
+        caption: "Interior spiraling atrium looking up towards natural sunlight.",
+        rollId: "all",
+        rollName: "Architecture",
+        date: "2026",
+        location: "Abuja, Nigeria",
+        src: "/user-photos/photo_3.jpg",
+        aspectRatio: "portrait",
+        exif: {
+            camera: "iPhone 11",
+            lens: "13mm f/2.4 Ultra Wide",
+            focalLength: "13mm",
+            aperture: "f/2.4",
+            shutterSpeed: "1/250s",
+            iso: "64",
+        },
+        story: "Looking up through the central spiraling balcony tiers inside Bank of Industry Tower 2.",
+    },
+    {
+        id: "photo-04",
+        title: "Reinsurance Building",
+        caption: "Facade framed through elevated window geometry.",
+        rollId: "all",
+        rollName: "Architecture",
+        date: "2026",
+        location: "Abuja, Nigeria",
+        src: "/user-photos/photo_4.jpg",
+        aspectRatio: "portrait",
+        exif: {
+            camera: "iPhone 11",
+            lens: "26mm f/1.8 Main",
+            focalLength: "26mm",
+            aperture: "f/1.8",
+            shutterSpeed: "1/1000s",
+            iso: "40",
+        },
+        story: "Exterior perspective of the Reinsurance building in Abuja, framed through a window aperture.",
+    },
+];
+

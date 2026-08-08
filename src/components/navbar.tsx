@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { SOCIALS } from "@/lib/data";
-import { Github, Linkedin, Twitter, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, FileText, Camera } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Navbar() {
     return (
@@ -12,13 +13,15 @@ export function Navbar() {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="pointer-events-auto"
+                    className="pointer-events-auto flex items-center gap-6"
                 >
-                    <a href="/" className="group flex items-center">
-                        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground whitespace-nowrap">
+                    <Link href="/" className="group flex items-center">
+                        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
                             Praise Ibe
                         </span>
-                    </a>
+                    </Link>
+                    <div className="w-[1px] h-3 bg-border/60" />
+
                 </motion.div>
 
                 <motion.div

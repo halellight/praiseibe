@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPENDIUM_DATA, SOCIALS, COMPANIES, VENTURES, CompendiumItem } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
-import { ArrowUpRight, Plus, Minus, LayoutGrid, FileText, Briefcase, GraduationCap, Heart, Calendar, ShieldCheck, Zap, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Plus, Minus, LayoutGrid, FileText, Briefcase, GraduationCap, Heart, Calendar, ShieldCheck, Zap, X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -140,9 +140,9 @@ export default function Home() {
           <div className="divide-y divide-border border-t border-border">
             <AnimatePresence mode="popLayout" initial={false}>
               {filteredData.map((record) => (
-                <ArchiveRow 
-                  key={record.id} 
-                  item={record} 
+                <ArchiveRow
+                  key={record.id}
+                  item={record}
                   isOpen={openRecordId === record.id}
                   onToggle={() => setOpenRecordId(openRecordId === record.id ? null : record.id)}
                   onImageClick={(images, idx) => setActiveGallery({ images, index: idx })}
@@ -178,6 +178,14 @@ export default function Home() {
               <a href={SOCIALS.twitter} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">Twitter</a>
               <a href={SOCIALS.linkedin} className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">LinkedIn</a>
             </div>
+            <Link
+              href="/photos"
+              className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-all"
+            >
+              <span className="text-[9px] font-black uppercase tracking-[0.3em]">
+                Photos
+              </span>
+            </Link>
           </div>
         </div>
       </footer>
@@ -192,7 +200,7 @@ export default function Home() {
             className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-sm p-4 md:p-12"
             onClick={() => setActiveGallery(null)}
           >
-            <button 
+            <button
               className="absolute top-6 right-6 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
               onClick={(e) => { e.stopPropagation(); setActiveGallery(null); }}
             >
@@ -200,9 +208,9 @@ export default function Home() {
             </button>
 
             {activeGallery.images.length > 1 && (
-              <button 
+              <button
                 className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
-                onClick={(e) => { 
+                onClick={(e) => {
                   e.stopPropagation();
                   setActiveGallery((prev) => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null);
                 }}
@@ -212,9 +220,9 @@ export default function Home() {
             )}
 
             {activeGallery.images.length > 1 && (
-              <button 
+              <button
                 className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors z-[101]"
-                onClick={(e) => { 
+                onClick={(e) => {
                   e.stopPropagation();
                   setActiveGallery((prev) => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null);
                 }}
@@ -231,7 +239,7 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            
+
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-bold tracking-widest uppercase">
               {activeGallery.index + 1} / {activeGallery.images.length}
             </div>
@@ -324,8 +332,8 @@ function ArchiveRow({ item, isOpen, onToggle, onImageClick }: { item: Compendium
                   {item.images && item.images.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
                       {item.images.map((img, idx) => (
-                        <div 
-                          key={idx} 
+                        <div
+                          key={idx}
                           className="aspect-[4/3] relative overflow-hidden bg-muted group/img cursor-pointer"
                           onClick={(e) => {
                             e.stopPropagation();
